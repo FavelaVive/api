@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Bruno/Documents/Projetos/Play/favelavive/conf/routes
-// @DATE:Sat Jul 07 18:45:43 GMT-03:00 2018
+// @DATE:Sat Jul 07 20:21:03 GMT-03:00 2018
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:19
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:22
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -43,12 +43,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
-    def listarCidade: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AtividadeController.listarCidade",
+    // @LINE:15
+    def contribuir: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.contribuir",
       """
-        function(uf0,cidade1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/favelas/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uf", encodeURIComponent(uf0)) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("cidade", encodeURIComponent(cidade1)) + "/atividades"})
+        function(atividadeId0,pessoaId1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/atividades/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("atividadeId", atividadeId0) + "/contribuir/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("pessoaId", pessoaId1)})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def listarFavela: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.listarFavela",
+      """
+        function(favelaId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/atividades/favelas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("favelaId", favelaId0)})
         }
       """
     )
@@ -59,6 +69,26 @@ package controllers.javascript {
       """
         function(pessoaId0) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/pessoas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("pessoaId", pessoaId0) + "/atividades"})
+        }
+      """
+    )
+  
+    // @LINE:14
+    def listarCidade: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.listarCidade",
+      """
+        function(uf0,cidade1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/atividades/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uf", encodeURIComponent(uf0)) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("cidade", encodeURIComponent(cidade1))})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def cancelarContribuicao: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.cancelarContribuicao",
+      """
+        function(atividadeId0,pessoaId1) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "api/atividades/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("atividadeId", atividadeId0) + "/contribuir/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("pessoaId", pessoaId1)})
         }
       """
     )
@@ -95,7 +125,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:15
+  // @LINE:18
   class ReverseMunicipioController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +133,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:18
     def listarUf: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MunicipioController.listarUf",
       """

@@ -15,6 +15,10 @@ public class AtividadeService {
 		return FIND.where().idEq(id).findUnique();
 	}
 	
+	public static Atividade findByFavela(Long favelaId) {
+		return FIND.where().eq("favela.id", favelaId).findUnique();
+	}
+	
 	public static List<Atividade> findByCidade(UF uf, String cidade) {
 		return FIND.where().and().eq("favela.uf", uf).eq("favela.cidade", cidade).endJunction().findList();
 	}

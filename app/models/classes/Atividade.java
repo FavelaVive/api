@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.joda.time.DateTime;
@@ -43,8 +44,8 @@ public class Atividade extends Model {
 	@ManyToOne
 	private Favela favela;
 	
-	@ManyToOne
-	private List<Pessoa> contribuintes;
+	@OneToMany
+	private List<Contribuicao> contribuicoes;
 	
 	@WhenCreated
 	@Column
@@ -96,12 +97,12 @@ public class Atividade extends Model {
 		return favela;
 	}
 
-	public List<Pessoa> getContribuintes() {
-		return contribuintes;
+	public List<Contribuicao> getContribuicao() {
+		return contribuicoes;
 	}
 
-	public void setContribuintes(List<Pessoa> contribuintes) {
-		this.contribuintes = contribuintes;
+	public void setContribuicao(List<Contribuicao> contribuicoes) {
+		this.contribuicoes = contribuicoes;
 	}
 
 	public Pessoa getPessoa() {

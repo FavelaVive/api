@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Bruno/Documents/Projetos/Play/favelavive/conf/routes
-// @DATE:Sat Jul 07 18:45:43 GMT-03:00 2018
+// @DATE:Sat Jul 07 20:21:03 GMT-03:00 2018
 
 package router
 
@@ -22,9 +22,9 @@ class Routes(
   AtividadeController_3: javax.inject.Provider[controllers.AtividadeController],
   // @LINE:11
   FavelaController_0: javax.inject.Provider[controllers.FavelaController],
-  // @LINE:15
+  // @LINE:18
   MunicipioController_1: javax.inject.Provider[controllers.MunicipioController],
-  // @LINE:19
+  // @LINE:22
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,9 +37,9 @@ class Routes(
     AtividadeController_3: javax.inject.Provider[controllers.AtividadeController],
     // @LINE:11
     FavelaController_0: javax.inject.Provider[controllers.FavelaController],
-    // @LINE:15
+    // @LINE:18
     MunicipioController_1: javax.inject.Provider[controllers.MunicipioController],
-    // @LINE:19
+    // @LINE:22
     Assets_4: controllers.Assets
   ) = this(errorHandler, PessoaController_2, AtividadeController_3, FavelaController_0, MunicipioController_1, Assets_4, "/")
 
@@ -60,7 +60,10 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/pessoas/""" + "$" + """pessoaId<[^/]+>/atividades""", """@controllers.AtividadeController@.criar(pessoaId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/favelas/""" + "$" + """uf<[^/]+>""", """@controllers.FavelaController@.listarUf(uf:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/favelas/""" + "$" + """uf<[^/]+>/""" + "$" + """cidade<[^/]+>""", """@controllers.FavelaController@.listarCidade(uf:String, cidade:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/favelas/""" + "$" + """uf<[^/]+>/""" + "$" + """cidade<[^/]+>/atividades""", """@controllers.AtividadeController@.listarCidade(uf:String, cidade:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/atividades/favelas/""" + "$" + """favelaId<[^/]+>""", """@controllers.AtividadeController@.listarFavela(favelaId:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/atividades/""" + "$" + """uf<[^/]+>/""" + "$" + """cidade<[^/]+>""", """@controllers.AtividadeController@.listarCidade(uf:String, cidade:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/atividades/""" + "$" + """atividadeId<[^/]+>/contribuir/""" + "$" + """pessoaId<[^/]+>""", """@controllers.AtividadeController@.contribuir(atividadeId:Long, pessoaId:Long)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/atividades/""" + "$" + """atividadeId<[^/]+>/contribuir/""" + "$" + """pessoaId<[^/]+>""", """@controllers.AtividadeController@.cancelarContribuicao(atividadeId:Long, pessoaId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/municipios/""" + "$" + """uf<[^/]+>""", """@controllers.MunicipioController@.listarUf(uf:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -156,10 +159,27 @@ class Routes(
   )
 
   // @LINE:13
-  private[this] lazy val controllers_AtividadeController_listarCidade5_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/favelas/"), DynamicPart("uf", """[^/]+""",true), StaticPart("/"), DynamicPart("cidade", """[^/]+""",true), StaticPart("/atividades")))
+  private[this] lazy val controllers_AtividadeController_listarFavela5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/favelas/"), DynamicPart("favelaId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_listarCidade5_invoker = createInvoker(
+  private[this] lazy val controllers_AtividadeController_listarFavela5_invoker = createInvoker(
+    AtividadeController_3.get.listarFavela(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "listarFavela",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """api/atividades/favelas/""" + "$" + """favelaId<[^/]+>"""
+    )
+  )
+
+  // @LINE:14
+  private[this] lazy val controllers_AtividadeController_listarCidade6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("uf", """[^/]+""",true), StaticPart("/"), DynamicPart("cidade", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_AtividadeController_listarCidade6_invoker = createInvoker(
     AtividadeController_3.get.listarCidade(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -168,15 +188,49 @@ class Routes(
       Seq(classOf[String], classOf[String]),
       "GET",
       """""",
-      this.prefix + """api/favelas/""" + "$" + """uf<[^/]+>/""" + "$" + """cidade<[^/]+>/atividades"""
+      this.prefix + """api/atividades/""" + "$" + """uf<[^/]+>/""" + "$" + """cidade<[^/]+>"""
     )
   )
 
   // @LINE:15
-  private[this] lazy val controllers_MunicipioController_listarUf6_route = Route("GET",
+  private[this] lazy val controllers_AtividadeController_contribuir7_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("atividadeId", """[^/]+""",true), StaticPart("/contribuir/"), DynamicPart("pessoaId", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_AtividadeController_contribuir7_invoker = createInvoker(
+    AtividadeController_3.get.contribuir(fakeValue[Long], fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "contribuir",
+      Seq(classOf[Long], classOf[Long]),
+      "POST",
+      """""",
+      this.prefix + """api/atividades/""" + "$" + """atividadeId<[^/]+>/contribuir/""" + "$" + """pessoaId<[^/]+>"""
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_AtividadeController_cancelarContribuicao8_route = Route("DELETE",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("atividadeId", """[^/]+""",true), StaticPart("/contribuir/"), DynamicPart("pessoaId", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_AtividadeController_cancelarContribuicao8_invoker = createInvoker(
+    AtividadeController_3.get.cancelarContribuicao(fakeValue[Long], fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "cancelarContribuicao",
+      Seq(classOf[Long], classOf[Long]),
+      "DELETE",
+      """""",
+      this.prefix + """api/atividades/""" + "$" + """atividadeId<[^/]+>/contribuir/""" + "$" + """pessoaId<[^/]+>"""
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_MunicipioController_listarUf9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/municipios/"), DynamicPart("uf", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_MunicipioController_listarUf6_invoker = createInvoker(
+  private[this] lazy val controllers_MunicipioController_listarUf9_invoker = createInvoker(
     MunicipioController_1.get.listarUf(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -189,11 +243,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_Assets_versioned7_route = Route("GET",
+  // @LINE:22
+  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned7_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -241,21 +295,39 @@ class Routes(
       }
   
     // @LINE:13
-    case controllers_AtividadeController_listarCidade5_route(params) =>
+    case controllers_AtividadeController_listarFavela5_route(params) =>
+      call(params.fromPath[Long]("favelaId", None)) { (favelaId) =>
+        controllers_AtividadeController_listarFavela5_invoker.call(AtividadeController_3.get.listarFavela(favelaId))
+      }
+  
+    // @LINE:14
+    case controllers_AtividadeController_listarCidade6_route(params) =>
       call(params.fromPath[String]("uf", None), params.fromPath[String]("cidade", None)) { (uf, cidade) =>
-        controllers_AtividadeController_listarCidade5_invoker.call(AtividadeController_3.get.listarCidade(uf, cidade))
+        controllers_AtividadeController_listarCidade6_invoker.call(AtividadeController_3.get.listarCidade(uf, cidade))
       }
   
     // @LINE:15
-    case controllers_MunicipioController_listarUf6_route(params) =>
-      call(params.fromPath[String]("uf", None)) { (uf) =>
-        controllers_MunicipioController_listarUf6_invoker.call(MunicipioController_1.get.listarUf(uf))
+    case controllers_AtividadeController_contribuir7_route(params) =>
+      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
+        controllers_AtividadeController_contribuir7_invoker.call(AtividadeController_3.get.contribuir(atividadeId, pessoaId))
       }
   
-    // @LINE:19
-    case controllers_Assets_versioned7_route(params) =>
+    // @LINE:16
+    case controllers_AtividadeController_cancelarContribuicao8_route(params) =>
+      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
+        controllers_AtividadeController_cancelarContribuicao8_invoker.call(AtividadeController_3.get.cancelarContribuicao(atividadeId, pessoaId))
+      }
+  
+    // @LINE:18
+    case controllers_MunicipioController_listarUf9_route(params) =>
+      call(params.fromPath[String]("uf", None)) { (uf) =>
+        controllers_MunicipioController_listarUf9_invoker.call(MunicipioController_1.get.listarUf(uf))
+      }
+  
+    // @LINE:22
+    case controllers_Assets_versioned10_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned7_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned10_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }
