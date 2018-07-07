@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -14,6 +15,8 @@ import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.WhenCreated;
 import com.avaje.ebean.annotation.WhenModified;
 
+import models.classes.enums.AtividadeTipo;
+
 @Entity
 @Table
 public class Atividade extends Model {
@@ -21,6 +24,9 @@ public class Atividade extends Model {
 	@Id
     @Column
     private Long id;
+	
+	@Enumerated
+	private AtividadeTipo atividadeTipo;
 	
 	@Column
 	private String titulo;
@@ -50,11 +56,12 @@ public class Atividade extends Model {
 
 	public Atividade() {}
 	
-	public Atividade(String titulo, String descricao, DateTime dataAtividade, Pessoa pessoa) {
+	public Atividade(String titulo, String descricao, AtividadeTipo atividadeTipo, DateTime dataAtividade, Pessoa pessoa) {
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.dataAtividade = dataAtividade;
 		this.pessoa = pessoa;
+		this.atividadeTipo = atividadeTipo;
 	}
 
 	public String getTitulo() {

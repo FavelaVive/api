@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import exceptions.AppException;
 import models.classes.Atividade;
 import models.classes.Pessoa;
+import models.classes.enums.AtividadeTipo;
 import models.classes.enums.UF;
 import models.forms.AtividadeForm;
 import models.utils.AppUtil;
@@ -64,7 +65,7 @@ public class AtividadeController extends BaseController {
     			AtividadeForm af = form.get();
     			if(af.isValido()) {
     				Pessoa pessoa = PessoaService.findById(pessoaId);
-    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.dataAtividade, pessoa);
+    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.atividadeTipo, af.dataAtividade, pessoa);
     				atividade.save();
     				resultado = true;
     				resposta.put("atividade", atividade);

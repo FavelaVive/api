@@ -3,6 +3,7 @@ package models.forms;
 import org.joda.time.DateTime;
 
 import exceptions.AppException;
+import models.classes.enums.AtividadeTipo;
 import play.data.validation.Constraints;
 
 public class AtividadeForm implements IForm {
@@ -15,6 +16,9 @@ public class AtividadeForm implements IForm {
     
     @Constraints.Required
     public DateTime dataAtividade;
+    
+    @Constraints.Required
+    public AtividadeTipo atividadeTipo;
     
     @Override
 	public boolean isValido() throws AppException {

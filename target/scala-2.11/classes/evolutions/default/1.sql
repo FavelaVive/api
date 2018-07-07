@@ -5,6 +5,7 @@
 
 create table atividade (
   id                            bigserial not null,
+  atividade_tipo                integer,
   titulo                        varchar(255),
   descricao                     varchar(255),
   data_atividade                timestamp,
@@ -12,6 +13,7 @@ create table atividade (
   favela_id                     bigint,
   data_criacao                  timestamp not null,
   data_modificacao              timestamp not null,
+  constraint ck_atividade_atividade_tipo check (atividade_tipo in (0,1)),
   constraint pk_atividade primary key (id)
 );
 

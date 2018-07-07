@@ -1,9 +1,71 @@
-2018-07-07 19:21:37,089 [WARN] from application in ForkJoinPool-1-worker-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2018-07-07 19:21:38,427 [INFO] from application in ForkJoinPool-1-worker-3 - Creating Pool for datasource 'default'
-2018-07-07 19:21:38,885 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-3 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
-2018-07-07 19:21:40,308 [ERROR] from application in netty-event-loop-3 - 
+2018-07-07 19:32:39,819 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:32:40,743 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2018-07-07 19:32:41,130 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:32:43,222 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2018-07-07 19:32:43,786 [INFO] from application in application-akka.actor.default-dispatcher-3 - [07/07/2018 19:32:43] FavelaVive >>> DETALHES
+2018-07-07 19:38:08,439 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-07 19:38:08,802 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:38:08,983 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-07 19:38:09,146 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:38:09,493 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-07-07 19:38:12,097 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-07 19:38:12,228 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:38:12,353 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-07 19:38:12,593 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:38:12,900 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-07-07 19:38:12,959 [INFO] from application in application-akka.actor.default-dispatcher-5 - [07/07/2018 19:38:12] FavelaVive >>> DETALHES
+2018-07-07 19:38:17,081 [INFO] from application in application-akka.actor.default-dispatcher-2 - [07/07/2018 19:38:17] FavelaVive >>> DETALHES
+2018-07-07 19:38:40,479 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2018-07-07 19:38:40,682 [WARN] from application in application-akka.actor.default-dispatcher-8 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:38:40,870 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2018-07-07 19:38:41,088 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:38:41,385 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-07-07 19:38:41,448 [INFO] from application in application-akka.actor.default-dispatcher-6 - [07/07/2018 19:38:41] FavelaVive >>> DETALHES
+2018-07-07 19:39:47,748 [ERROR] from application in netty-event-loop-6 - 
 
-! @78g17oi85 - Internal server error, for (GET) [/api/pessoas/0] ->
+! @78g1a8em8 - Internal server error, for (GET) [/api/pessoas/0] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[no suitable constructor found for Atividade(java.lang.String,java.lang.String,org.joda.time.DateTime,models.classes.Pessoa)
+    constructor models.classes.Atividade.Atividade() is not applicable
+      (actual and formal argument lists differ in length)
+    constructor models.classes.Atividade.Atividade(java.lang.String,java.lang.String,models.classes.enums.AtividadeTipo,org.joda.time.DateTime,models.classes.Pessoa) is not applicable
+      (actual and formal argument lists differ in length)]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at scala.util.Either$LeftProjection.map(Either.scala:377)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
+	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:339)
+	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:44)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:40)
+	at play.runsupport.Reloader.reload(Reloader.scala:337)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:123)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:121)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:409)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2018-07-07 19:41:47,830 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-07 19:41:47,944 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:41:48,043 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-07 19:41:48,172 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:41:48,346 [ERROR] from application in netty-event-loop-6 - 
+
+! @78g1afba6 - Internal server error, for (GET) [/api/pessoas/0] ->
  
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:77)
@@ -50,16 +112,17 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:121)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2018-07-07 19:22:04,442 [INFO] from application in ForkJoinPool-1-worker-0 - Shutting down connection pool.
-2018-07-07 19:22:04,604 [WARN] from application in ForkJoinPool-1-worker-0 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2018-07-07 19:22:04,838 [INFO] from application in ForkJoinPool-1-worker-0 - Creating Pool for datasource 'default'
-2018-07-07 19:22:05,254 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-0 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
-2018-07-07 19:22:06,032 [INFO] from play.api.Play in ForkJoinPool-1-worker-0 - Application started (Dev)
-2018-07-07 19:22:06,548 [INFO] from application in application-akka.actor.default-dispatcher-4 - [07/07/2018 19:22:06] FavelaVive >>> DETALHES
-2018-07-07 19:22:15,036 [INFO] from application in application-akka.actor.default-dispatcher-3 - [07/07/2018 19:22:15] FavelaVive >>> DETALHES
-2018-07-07 19:23:05,068 [INFO] from application in pool-4-thread-1 - Shutting down connection pool.
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:409)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2018-07-07 19:42:03,709 [INFO] from application in ForkJoinPool-1-worker-2 - Shutting down connection pool.
+2018-07-07 19:42:03,814 [WARN] from application in ForkJoinPool-1-worker-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-07 19:42:03,899 [INFO] from application in ForkJoinPool-1-worker-2 - Creating Pool for datasource 'default'
+2018-07-07 19:42:04,037 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-07 19:42:04,278 [INFO] from play.api.Play in ForkJoinPool-1-worker-2 - Application started (Dev)
+2018-07-07 19:42:04,328 [INFO] from application in application-akka.actor.default-dispatcher-6 - [07/07/2018 19:42:04] FavelaVive >>> DETALHES
+2018-07-07 19:47:09,277 [INFO] from application in application-akka.actor.default-dispatcher-5 - [07/07/2018 19:47:09] FavelaVive >>> DETALHES
+2018-07-07 19:47:15,197 [INFO] from application in application-akka.actor.default-dispatcher-5 - [07/07/2018 19:47:15] FavelaVive >>> DETALHES
