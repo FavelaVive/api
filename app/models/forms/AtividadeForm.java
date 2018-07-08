@@ -1,6 +1,6 @@
 package models.forms;
 
-import org.joda.time.DateTime;
+import java.util.Date;
 
 import exceptions.AppException;
 import models.classes.enums.AtividadeCategoria;
@@ -15,8 +15,7 @@ public class AtividadeForm implements IForm {
     @Constraints.Required
     public String descricao;
     
-    @Constraints.Required
-    public DateTime dataAtividade;
+    public Date dataAtividade;
     
     @Constraints.Required
     public AtividadeTipo atividadeTipo;

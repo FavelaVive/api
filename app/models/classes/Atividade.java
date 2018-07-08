@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.joda.time.DateTime;
 
@@ -19,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import models.classes.enums.AtividadeCategoria;
@@ -68,6 +70,10 @@ public class Atividade extends Model {
 	@WhenModified
 	@Column
 	private DateTime dataModificacao;
+	
+	@JsonProperty
+	@Transient
+	private boolean contribuindo;
 
 	public Atividade() {}
 	
@@ -152,5 +158,13 @@ public class Atividade extends Model {
 
 	public void setAtividadeCategoria(AtividadeCategoria atividadeCategoria) {
 		this.atividadeCategoria = atividadeCategoria;
+	}
+
+	public boolean isContribuindo() {
+		return contribuindo;
+	}
+
+	public void setContribuindo(boolean contribuindo) {
+		this.contribuindo = contribuindo;
 	}
 }

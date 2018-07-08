@@ -5,7 +5,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.joda.time.DateTime;
+
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 
 import exceptions.AppException;
 import interceptors.PessoaInterceptor;
@@ -33,13 +37,13 @@ public class AtividadeController extends BaseController {
     }
 
     @With({PessoaInterceptor.class})
-    public Result listarCidade(String uf, String cidade) {
+    public Result listarCidade(String uf, String cidade, Long pessoaId) {
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;
     	try {
     		UF euf = UF.parse(uf);
     		if(euf != null) {
-    			List<Atividade> atividades = AtividadeService.findByCidade(euf, cidade);
+    			List<Atividade> atividades = AtividadeService.findByCidade(euf, cidade);    			
     			resposta.put("atividades", atividades);
     			resultado = true;
     		}
@@ -77,17 +81,21 @@ public class AtividadeController extends BaseController {
     
     @With({PessoaInterceptor.class})
     public Result criar(Long pessoaId) {
+    	DebugUtil.i("CRIAR");
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;
     	try {
-    		JsonNode rjson = request().body().asJson();
-    		Form<AtividadeForm> form = this.formFactory.form(AtividadeForm.class).bind(rjson);
+    		String req = request().body().asText();
+    		ObjectMapper mapper = new ObjectMapper();
+    		JsonNode actualObj = mapper.readTree(req);
+    		DebugUtil.i(actualObj.toString());
+    		Form<AtividadeForm> form = this.formFactory.form(AtividadeForm.class).bind(actualObj);
     		
     		if(form != null) {
     			AtividadeForm af = form.get();
     			if(af.isValido()) {
     				Pessoa pessoa = PessoaService.findById(pessoaId);
-    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.atividadeTipo, af.atividadeCategoria, af.dataAtividade, pessoa, pessoa.getFavela());
+    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.atividadeTipo, af.atividadeCategoria, new DateTime(af.dataAtividade), pessoa, pessoa.getFavela());
     				atividade.save();
     				resultado = true;
     				resposta.put("atividade", atividade);

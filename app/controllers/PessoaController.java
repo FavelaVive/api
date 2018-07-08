@@ -4,16 +4,12 @@ import java.util.HashMap;
 
 import javax.inject.Inject;
 
-import org.joda.time.DateTime;
-
 import com.fasterxml.jackson.databind.JsonNode;
 
 import exceptions.AppException;
 import interceptors.PessoaInterceptor;
-import models.classes.Favela;
 import models.classes.Pessoa;
 import models.classes.enums.PessoaTipo;
-import models.classes.enums.UF;
 import models.forms.CadastroForm;
 import models.utils.AppUtil;
 import models.utils.DebugUtil;
@@ -73,8 +69,8 @@ public class PessoaController extends BaseController {
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;
     	try {
-    		Pessoa pessoa = new Pessoa("Usuario Teste", "usuario@email.com", "***", "M", "", "", new DateTime(), PessoaTipo.MORADOR, new Favela("Morro Teste", UF.PE, "Recife")); //PessoaService.findById(pessoaId);
-			resultado = true;
+    		Pessoa pessoa = PessoaService.findById(pessoaId);
+    		resultado = true;
 			resposta.put("pessoa", pessoa);
     	}catch(Exception e) {
     		e.printStackTrace();

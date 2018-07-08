@@ -11,14 +11,11 @@ import org.joda.time.DateTime;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.WhenCreated;
 import com.avaje.ebean.annotation.WhenModified;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import viewers.AtividadeViewer;
+import models.utils.DebugUtil;
 
 @Entity
 @Table
@@ -71,4 +68,5 @@ public class Contribuicao extends Model {
 	public DateTime getDataCriacao() {
 		return dataCriacao;
 	}
+
 }
