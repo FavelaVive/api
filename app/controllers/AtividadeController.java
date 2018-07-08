@@ -15,6 +15,7 @@ import models.classes.Pessoa;
 import models.classes.enums.UF;
 import models.forms.AtividadeForm;
 import models.utils.AppUtil;
+import models.utils.DebugUtil;
 import play.data.Form;
 import play.data.FormFactory;
 import play.libs.Json;
@@ -129,6 +130,7 @@ public class AtividadeController extends BaseController {
     
     @With({PessoaInterceptor.class})
     public Result contribuir(Long pessoaId, Long atividadeId) {
+    	DebugUtil.i("CONTRIBUIR");
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;
     	try {
@@ -143,6 +145,34 @@ public class AtividadeController extends BaseController {
     		}else {
     			throw new AppException(AppUtil.getMessage("ge.iFields"));
     		}
+    		resultado = true;
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    		resposta.put("mensagem", e.getMessage());
+    	}
+    	resposta.put("resultado", resultado);
+    	if(resultado){
+    		return ok(Json.toJson(resposta));
+    	}else{
+    		return badRequest(Json.toJson(resposta));
+    	}
+    }
+    
+    @With({PessoaInterceptor.class})
+    public Result contribuindo(Long pessoaId, Long atividadeId) {
+    	DebugUtil.i("CONTRIBUINDO");
+    	HashMap<String, Object> resposta = new HashMap<>();
+    	boolean resultado = false;
+    	try {
+    		Contribuicao contribuicao = null;
+    		Pessoa pessoa = PessoaService.findById(pessoaId);
+    		Atividade atividade = AtividadeService.findById(atividadeId);
+    		if(pessoa != null && atividade != null && atividade.getPessoa().getId() != pessoa.getId()) {
+    			contribuicao = ContribuicaoService.findByPessoaEAtividade(pessoaId, atividadeId);
+    		}else {
+    			throw new AppException(AppUtil.getMessage("ge.iFields"));
+    		}
+    		resposta.put("contribuindo", contribuicao != null);
     		resultado = true;
     	}catch(Exception e) {
     		e.printStackTrace();
