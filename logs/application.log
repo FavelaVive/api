@@ -14987,3 +14987,17 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
 2018-07-08 03:55:47,579 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
 2018-07-08 03:55:47,709 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
 2018-07-08 03:55:47,928 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-07-08 03:59:14,275 [INFO] from application in application-akka.actor.default-dispatcher-4 - [08/07/2018 03:59:14] FavelaVive >>> DETALHES
+2018-07-08 04:02:01,120 [INFO] from application in application-akka.actor.default-dispatcher-4 - [08/07/2018 04:02:01] FavelaVive >>> DETALHES
+2018-07-08 04:03:29,767 [INFO] from application in application-akka.actor.default-dispatcher-4 - [08/07/2018 04:03:29] FavelaVive >>> DETALHES
+2018-07-08 04:04:15,951 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-08 04:04:16,044 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 04:04:16,101 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-08 04:04:16,318 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 04:04:16,575 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-07-08 04:04:35,005 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2018-07-08 04:04:35,106 [WARN] from application in application-akka.actor.default-dispatcher-8 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 04:04:35,150 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2018-07-08 04:04:35,256 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 04:04:35,556 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-07-08 04:04:46,318 [INFO] from application in application-akka.actor.default-dispatcher-9 - [08/07/2018 04:04:46] FavelaVive >>> DETALHES
