@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Bruno/Documents/Projetos/Play/favelavive/conf/routes
-// @DATE:Sat Jul 07 21:14:09 GMT-03:00 2018
+// @DATE:Sun Jul 08 01:37:50 GMT-03:00 2018
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:25
+  // @LINE:29
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:29
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -35,7 +35,27 @@ package controllers.javascript {
   
   }
 
-  // @LINE:12
+  // @LINE:9
+  class ReverseHomeController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:9
+    def main: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.main",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:15
   class ReverseAtividadeController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +63,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:22
     def contribuir: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.contribuir",
       """
@@ -53,7 +73,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:20
     def listarFavela: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.listarFavela",
       """
@@ -63,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:15
     def criar: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.criar",
       """
@@ -73,7 +93,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:16
+    def contribuicoes: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.contribuicoes",
+      """
+        function(pessoaId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/pessoas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("pessoaId", pessoaId0) + "/contribuicoes"})
+        }
+      """
+    )
+  
+    // @LINE:21
     def listarCidade: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.listarCidade",
       """
@@ -83,7 +113,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:23
     def cancelarContribuicao: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.cancelarContribuicao",
       """
@@ -95,7 +125,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:9
+  // @LINE:12
   class ReversePessoaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +133,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:10
+    // @LINE:13
     def detalhes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PessoaController.detalhes",
       """
@@ -113,7 +143,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:12
     def acessar: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PessoaController.acessar",
       """
@@ -125,7 +155,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:21
+  // @LINE:25
   class ReverseMunicipioController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -133,7 +163,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:21
+    // @LINE:25
     def listarUf: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MunicipioController.listarUf",
       """
@@ -145,7 +175,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:14
+  // @LINE:18
   class ReverseFavelaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -153,7 +183,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:19
     def listarCidade: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FavelaController.listarCidade",
       """
@@ -163,7 +193,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
+    // @LINE:18
     def listarUf: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FavelaController.listarUf",
       """

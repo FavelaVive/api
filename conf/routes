@@ -5,11 +5,15 @@
 ### SIMULADOR
 GET		/api/simular													@controllers.SimuladorController.simular()
 
+### ADMIN
+GET		/																@controllers.HomeController.main()
+
 ### API
 POST	/api/pessoas													@controllers.PessoaController.acessar()
 GET		/api/pessoas/:pessoaId											@controllers.PessoaController.detalhes(pessoaId: Long)
 	
 POST	/api/pessoas/:pessoaId/atividades								@controllers.AtividadeController.criar(pessoaId: Long)
+GET		/api/pessoas/:pessoaId/contribuicoes							@controllers.AtividadeController.contribuicoes(pessoaId: Long)
 
 GET		/api/favelas/:uf												@controllers.FavelaController.listarUf(uf: String)
 GET		/api/favelas/:uf/:cidade										@controllers.FavelaController.listarCidade(uf: String, cidade: String)

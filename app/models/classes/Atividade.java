@@ -15,7 +15,11 @@ import org.joda.time.DateTime;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.WhenCreated;
 import com.avaje.ebean.annotation.WhenModified;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import models.classes.enums.AtividadeCategoria;
 import models.classes.enums.AtividadeTipo;
@@ -51,6 +55,7 @@ public class Atividade extends Model {
 	@ManyToOne
 	private Favela favela;
 	
+	@JsonIdentityInfo(property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 	@OneToMany
 	private List<Contribuicao> contribuicoes;
 	

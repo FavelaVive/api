@@ -109,6 +109,26 @@ public class AtividadeController extends BaseController {
     }
     
     @With({PessoaInterceptor.class})
+    public Result contribuicoes(Long pessoaId) {
+    	HashMap<String, Object> resposta = new HashMap<>();
+    	boolean resultado = false;
+    	try {
+    		List<Contribuicao> contribuicoes = ContribuicaoService.findByPessoa(pessoaId);
+    		resposta.put("contribuicoes", contribuicoes);
+    		resultado = true;
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    		resposta.put("mensagem", e.getMessage());
+    	}
+    	resposta.put("resultado", resultado);
+    	if(resultado){
+    		return ok(Json.toJson(resposta));
+    	}else{
+    		return badRequest(Json.toJson(resposta));
+    	}
+    }
+    
+    @With({PessoaInterceptor.class})
     public Result contribuir(Long pessoaId, Long atividadeId) {
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;

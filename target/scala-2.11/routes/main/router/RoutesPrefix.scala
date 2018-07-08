@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Bruno/Documents/Projetos/Play/favelavive/conf/routes
-// @DATE:Sat Jul 07 21:14:09 GMT-03:00 2018
+// @DATE:Sun Jul 08 01:37:50 GMT-03:00 2018
 
 
 package router {
