@@ -8,14 +8,13 @@ import javax.inject.Inject;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import exceptions.AppException;
+import interceptors.PessoaInterceptor;
 import models.classes.Atividade;
 import models.classes.Contribuicao;
 import models.classes.Pessoa;
-import models.classes.enums.AtividadeTipo;
 import models.classes.enums.UF;
 import models.forms.AtividadeForm;
 import models.utils.AppUtil;
-import interceptors.PessoaInterceptor;
 import play.data.Form;
 import play.data.FormFactory;
 import play.libs.Json;
