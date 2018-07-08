@@ -11,6 +11,7 @@ import org.joda.time.DateTime;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.WhenCreated;
 import com.avaje.ebean.annotation.WhenModified;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import models.classes.enums.UF;
 
@@ -34,10 +35,12 @@ public class Favela extends Model {
 	@Column
 	private String cidade;
 	
+	@JsonIgnore
 	@WhenCreated
 	@Column
 	private DateTime dataCriacao;
 	
+	@JsonIgnore
 	@WhenModified
 	@Column
 	private DateTime dataModificacao;

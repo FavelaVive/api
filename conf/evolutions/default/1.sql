@@ -6,6 +6,7 @@
 create table atividade (
   id                            bigserial not null,
   atividade_tipo                integer,
+  atividade_categoria           integer,
   titulo                        varchar(255),
   descricao                     varchar(255),
   data_atividade                timestamp,
@@ -14,6 +15,7 @@ create table atividade (
   data_criacao                  timestamp not null,
   data_modificacao              timestamp not null,
   constraint ck_atividade_atividade_tipo check (atividade_tipo in (0,1)),
+  constraint ck_atividade_atividade_categoria check (atividade_categoria in (0,1,2,3,4)),
   constraint pk_atividade primary key (id)
 );
 
@@ -56,6 +58,7 @@ create table pessoa (
   genero                        varchar(255),
   url_foto                      varchar(255),
   token                         varchar(255),
+  favela_id                     bigint,
   data_nascimento               timestamp,
   data_criacao                  timestamp not null,
   data_modificacao              timestamp not null,
@@ -75,6 +78,9 @@ create index ix_contribuicao_atividade_id on contribuicao (atividade_id);
 alter table contribuicao add constraint fk_contribuicao_pessoa_id foreign key (pessoa_id) references pessoa (id) on delete restrict on update restrict;
 create index ix_contribuicao_pessoa_id on contribuicao (pessoa_id);
 
+alter table pessoa add constraint fk_pessoa_favela_id foreign key (favela_id) references favela (id) on delete restrict on update restrict;
+create index ix_pessoa_favela_id on pessoa (favela_id);
+
 
 # --- !Downs
 
@@ -89,6 +95,9 @@ drop index if exists ix_contribuicao_atividade_id;
 
 alter table if exists contribuicao drop constraint if exists fk_contribuicao_pessoa_id;
 drop index if exists ix_contribuicao_pessoa_id;
+
+alter table if exists pessoa drop constraint if exists fk_pessoa_favela_id;
+drop index if exists ix_pessoa_favela_id;
 
 drop table if exists atividade cascade;
 

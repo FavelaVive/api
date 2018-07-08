@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.joda.time.DateTime;
@@ -37,6 +38,7 @@ public class Pessoa extends Model {
 	@Column
 	private String email;
 	
+	@JsonIgnore
 	@Column
 	private String senha;
 	
@@ -49,6 +51,7 @@ public class Pessoa extends Model {
 	@Column
 	private String token;
 	
+	@ManyToOne
 	@Column(nullable=true)
 	private Favela favela;
 	
@@ -56,10 +59,12 @@ public class Pessoa extends Model {
 	@JsonIgnore
 	private DateTime dataNascimento;
 
+	@JsonIgnore
 	@WhenCreated
 	@Column
 	private DateTime dataCriacao;
 	
+	@JsonIgnore
 	@WhenModified
 	@Column
 	private DateTime dataModificacao;

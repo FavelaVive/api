@@ -2,6 +2,9 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+### SIMULADOR
+GET		/api/simular													@controllers.SimuladorController.simular()
+
 ### API
 POST	/api/pessoas													@controllers.PessoaController.acessar()
 GET		/api/pessoas/:pessoaId											@controllers.PessoaController.detalhes(pessoaId: Long)
@@ -15,7 +18,7 @@ GET		/api/atividades/:uf/:cidade										@controllers.AtividadeController.lista
 POST	/api/atividades/:atividadeId/contribuir/:pessoaId				@controllers.AtividadeController.contribuir(atividadeId: Long, pessoaId: Long)
 DELETE	/api/atividades/:atividadeId/contribuir/:pessoaId				@controllers.AtividadeController.cancelarContribuicao(atividadeId: Long, pessoaId: Long)
 
-GET		/api/municipios/:uf									@controllers.MunicipioController.listarUf(uf: String)
+GET		/api/municipios/:uf												@controllers.MunicipioController.listarUf(uf: String)
 
 ### ASSETS
 # Map static resources from the /public folder to the /assets URL path

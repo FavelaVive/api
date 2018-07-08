@@ -60,8 +60,8 @@ public class AtividadeController extends BaseController {
     	HashMap<String, Object> resposta = new HashMap<>();
     	boolean resultado = false;
     	try {
-    		Atividade atividade = AtividadeService.findByFavela(favelaId);
-			resposta.put("atividade", atividade);
+    		List<Atividade> atividade = AtividadeService.findByFavela(favelaId);
+			resposta.put("atividades", atividade);
 			resultado = true;
     	}catch(Exception e) {
     		e.printStackTrace();
@@ -87,7 +87,7 @@ public class AtividadeController extends BaseController {
     			AtividadeForm af = form.get();
     			if(af.isValido()) {
     				Pessoa pessoa = PessoaService.findById(pessoaId);
-    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.atividadeTipo, af.dataAtividade, pessoa);
+    				Atividade atividade = new Atividade(af.titulo, af.descricao, af.atividadeTipo, af.atividadeCategoria, af.dataAtividade, pessoa, pessoa.getFavela());
     				atividade.save();
     				resultado = true;
     				resposta.put("atividade", atividade);
@@ -115,7 +115,7 @@ public class AtividadeController extends BaseController {
     	try {
     		Pessoa pessoa = PessoaService.findById(pessoaId);
     		Atividade atividade = AtividadeService.findById(atividadeId);
-    		if(pessoa != null && atividade != null) {
+    		if(pessoa != null && atividade != null && atividade.getPessoa().getId() != pessoa.getId()) {
     			Contribuicao contribuicao = ContribuicaoService.findByPessoaEAtividade(pessoaId, atividadeId);
     			if(contribuicao == null){
         			contribuicao = new Contribuicao(atividade, pessoa);

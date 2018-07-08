@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Bruno/Documents/Projetos/Play/favelavive/conf/routes
-// @DATE:Sat Jul 07 20:21:03 GMT-03:00 2018
+// @DATE:Sat Jul 07 21:14:09 GMT-03:00 2018
 
 package router
 
@@ -17,37 +17,41 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  PessoaController_2: javax.inject.Provider[controllers.PessoaController],
+  SimuladorController_0: javax.inject.Provider[controllers.SimuladorController],
   // @LINE:9
-  AtividadeController_3: javax.inject.Provider[controllers.AtividadeController],
-  // @LINE:11
-  FavelaController_0: javax.inject.Provider[controllers.FavelaController],
-  // @LINE:18
-  MunicipioController_1: javax.inject.Provider[controllers.MunicipioController],
-  // @LINE:22
-  Assets_4: controllers.Assets,
+  PessoaController_3: javax.inject.Provider[controllers.PessoaController],
+  // @LINE:12
+  AtividadeController_4: javax.inject.Provider[controllers.AtividadeController],
+  // @LINE:14
+  FavelaController_1: javax.inject.Provider[controllers.FavelaController],
+  // @LINE:21
+  MunicipioController_2: javax.inject.Provider[controllers.MunicipioController],
+  // @LINE:25
+  Assets_5: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    PessoaController_2: javax.inject.Provider[controllers.PessoaController],
+    SimuladorController_0: javax.inject.Provider[controllers.SimuladorController],
     // @LINE:9
-    AtividadeController_3: javax.inject.Provider[controllers.AtividadeController],
-    // @LINE:11
-    FavelaController_0: javax.inject.Provider[controllers.FavelaController],
-    // @LINE:18
-    MunicipioController_1: javax.inject.Provider[controllers.MunicipioController],
-    // @LINE:22
-    Assets_4: controllers.Assets
-  ) = this(errorHandler, PessoaController_2, AtividadeController_3, FavelaController_0, MunicipioController_1, Assets_4, "/")
+    PessoaController_3: javax.inject.Provider[controllers.PessoaController],
+    // @LINE:12
+    AtividadeController_4: javax.inject.Provider[controllers.AtividadeController],
+    // @LINE:14
+    FavelaController_1: javax.inject.Provider[controllers.FavelaController],
+    // @LINE:21
+    MunicipioController_2: javax.inject.Provider[controllers.MunicipioController],
+    // @LINE:25
+    Assets_5: controllers.Assets
+  ) = this(errorHandler, SimuladorController_0, PessoaController_3, AtividadeController_4, FavelaController_1, MunicipioController_2, Assets_5, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, PessoaController_2, AtividadeController_3, FavelaController_0, MunicipioController_1, Assets_4, prefix)
+    new Routes(errorHandler, SimuladorController_0, PessoaController_3, AtividadeController_4, FavelaController_1, MunicipioController_2, Assets_5, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -55,6 +59,7 @@ class Routes(
   }
 
   def documentation = List(
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/simular""", """@controllers.SimuladorController@.simular()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/pessoas""", """@controllers.PessoaController@.acessar()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/pessoas/""" + "$" + """pessoaId<[^/]+>""", """@controllers.PessoaController@.detalhes(pessoaId:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/pessoas/""" + "$" + """pessoaId<[^/]+>/atividades""", """@controllers.AtividadeController@.criar(pessoaId:Long)"""),
@@ -74,11 +79,28 @@ class Routes(
 
 
   // @LINE:6
-  private[this] lazy val controllers_PessoaController_acessar0_route = Route("POST",
+  private[this] lazy val controllers_SimuladorController_simular0_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/simular")))
+  )
+  private[this] lazy val controllers_SimuladorController_simular0_invoker = createInvoker(
+    SimuladorController_0.get.simular(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.SimuladorController",
+      "simular",
+      Nil,
+      "GET",
+      """## SIMULADOR""",
+      this.prefix + """api/simular"""
+    )
+  )
+
+  // @LINE:9
+  private[this] lazy val controllers_PessoaController_acessar1_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/pessoas")))
   )
-  private[this] lazy val controllers_PessoaController_acessar0_invoker = createInvoker(
-    PessoaController_2.get.acessar(),
+  private[this] lazy val controllers_PessoaController_acessar1_invoker = createInvoker(
+    PessoaController_3.get.acessar(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.PessoaController",
@@ -90,12 +112,12 @@ class Routes(
     )
   )
 
-  // @LINE:7
-  private[this] lazy val controllers_PessoaController_detalhes1_route = Route("GET",
+  // @LINE:10
+  private[this] lazy val controllers_PessoaController_detalhes2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/pessoas/"), DynamicPart("pessoaId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PessoaController_detalhes1_invoker = createInvoker(
-    PessoaController_2.get.detalhes(fakeValue[Long]),
+  private[this] lazy val controllers_PessoaController_detalhes2_invoker = createInvoker(
+    PessoaController_3.get.detalhes(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.PessoaController",
@@ -107,12 +129,12 @@ class Routes(
     )
   )
 
-  // @LINE:9
-  private[this] lazy val controllers_AtividadeController_criar2_route = Route("POST",
+  // @LINE:12
+  private[this] lazy val controllers_AtividadeController_criar3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/pessoas/"), DynamicPart("pessoaId", """[^/]+""",true), StaticPart("/atividades")))
   )
-  private[this] lazy val controllers_AtividadeController_criar2_invoker = createInvoker(
-    AtividadeController_3.get.criar(fakeValue[Long]),
+  private[this] lazy val controllers_AtividadeController_criar3_invoker = createInvoker(
+    AtividadeController_4.get.criar(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -124,12 +146,12 @@ class Routes(
     )
   )
 
-  // @LINE:11
-  private[this] lazy val controllers_FavelaController_listarUf3_route = Route("GET",
+  // @LINE:14
+  private[this] lazy val controllers_FavelaController_listarUf4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/favelas/"), DynamicPart("uf", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FavelaController_listarUf3_invoker = createInvoker(
-    FavelaController_0.get.listarUf(fakeValue[String]),
+  private[this] lazy val controllers_FavelaController_listarUf4_invoker = createInvoker(
+    FavelaController_1.get.listarUf(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.FavelaController",
@@ -141,12 +163,12 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_FavelaController_listarCidade4_route = Route("GET",
+  // @LINE:15
+  private[this] lazy val controllers_FavelaController_listarCidade5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/favelas/"), DynamicPart("uf", """[^/]+""",true), StaticPart("/"), DynamicPart("cidade", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FavelaController_listarCidade4_invoker = createInvoker(
-    FavelaController_0.get.listarCidade(fakeValue[String], fakeValue[String]),
+  private[this] lazy val controllers_FavelaController_listarCidade5_invoker = createInvoker(
+    FavelaController_1.get.listarCidade(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.FavelaController",
@@ -158,12 +180,12 @@ class Routes(
     )
   )
 
-  // @LINE:13
-  private[this] lazy val controllers_AtividadeController_listarFavela5_route = Route("GET",
+  // @LINE:16
+  private[this] lazy val controllers_AtividadeController_listarFavela6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/favelas/"), DynamicPart("favelaId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_listarFavela5_invoker = createInvoker(
-    AtividadeController_3.get.listarFavela(fakeValue[Long]),
+  private[this] lazy val controllers_AtividadeController_listarFavela6_invoker = createInvoker(
+    AtividadeController_4.get.listarFavela(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -175,12 +197,12 @@ class Routes(
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_AtividadeController_listarCidade6_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_AtividadeController_listarCidade7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("uf", """[^/]+""",true), StaticPart("/"), DynamicPart("cidade", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_listarCidade6_invoker = createInvoker(
-    AtividadeController_3.get.listarCidade(fakeValue[String], fakeValue[String]),
+  private[this] lazy val controllers_AtividadeController_listarCidade7_invoker = createInvoker(
+    AtividadeController_4.get.listarCidade(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -192,12 +214,12 @@ class Routes(
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_AtividadeController_contribuir7_route = Route("POST",
+  // @LINE:18
+  private[this] lazy val controllers_AtividadeController_contribuir8_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("atividadeId", """[^/]+""",true), StaticPart("/contribuir/"), DynamicPart("pessoaId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_contribuir7_invoker = createInvoker(
-    AtividadeController_3.get.contribuir(fakeValue[Long], fakeValue[Long]),
+  private[this] lazy val controllers_AtividadeController_contribuir8_invoker = createInvoker(
+    AtividadeController_4.get.contribuir(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -209,12 +231,12 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_AtividadeController_cancelarContribuicao8_route = Route("DELETE",
+  // @LINE:19
+  private[this] lazy val controllers_AtividadeController_cancelarContribuicao9_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/atividades/"), DynamicPart("atividadeId", """[^/]+""",true), StaticPart("/contribuir/"), DynamicPart("pessoaId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_cancelarContribuicao8_invoker = createInvoker(
-    AtividadeController_3.get.cancelarContribuicao(fakeValue[Long], fakeValue[Long]),
+  private[this] lazy val controllers_AtividadeController_cancelarContribuicao9_invoker = createInvoker(
+    AtividadeController_4.get.cancelarContribuicao(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -226,12 +248,12 @@ class Routes(
     )
   )
 
-  // @LINE:18
-  private[this] lazy val controllers_MunicipioController_listarUf9_route = Route("GET",
+  // @LINE:21
+  private[this] lazy val controllers_MunicipioController_listarUf10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/municipios/"), DynamicPart("uf", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_MunicipioController_listarUf9_invoker = createInvoker(
-    MunicipioController_1.get.listarUf(fakeValue[String]),
+  private[this] lazy val controllers_MunicipioController_listarUf10_invoker = createInvoker(
+    MunicipioController_2.get.listarUf(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.MunicipioController",
@@ -243,12 +265,12 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
+  // @LINE:25
+  private[this] lazy val controllers_Assets_versioned11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
-    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned11_invoker = createInvoker(
+    Assets_5.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -265,69 +287,75 @@ class Routes(
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
-    case controllers_PessoaController_acessar0_route(params) =>
+    case controllers_SimuladorController_simular0_route(params) =>
       call { 
-        controllers_PessoaController_acessar0_invoker.call(PessoaController_2.get.acessar())
-      }
-  
-    // @LINE:7
-    case controllers_PessoaController_detalhes1_route(params) =>
-      call(params.fromPath[Long]("pessoaId", None)) { (pessoaId) =>
-        controllers_PessoaController_detalhes1_invoker.call(PessoaController_2.get.detalhes(pessoaId))
+        controllers_SimuladorController_simular0_invoker.call(SimuladorController_0.get.simular())
       }
   
     // @LINE:9
-    case controllers_AtividadeController_criar2_route(params) =>
-      call(params.fromPath[Long]("pessoaId", None)) { (pessoaId) =>
-        controllers_AtividadeController_criar2_invoker.call(AtividadeController_3.get.criar(pessoaId))
+    case controllers_PessoaController_acessar1_route(params) =>
+      call { 
+        controllers_PessoaController_acessar1_invoker.call(PessoaController_3.get.acessar())
       }
   
-    // @LINE:11
-    case controllers_FavelaController_listarUf3_route(params) =>
-      call(params.fromPath[String]("uf", None)) { (uf) =>
-        controllers_FavelaController_listarUf3_invoker.call(FavelaController_0.get.listarUf(uf))
+    // @LINE:10
+    case controllers_PessoaController_detalhes2_route(params) =>
+      call(params.fromPath[Long]("pessoaId", None)) { (pessoaId) =>
+        controllers_PessoaController_detalhes2_invoker.call(PessoaController_3.get.detalhes(pessoaId))
       }
   
     // @LINE:12
-    case controllers_FavelaController_listarCidade4_route(params) =>
-      call(params.fromPath[String]("uf", None), params.fromPath[String]("cidade", None)) { (uf, cidade) =>
-        controllers_FavelaController_listarCidade4_invoker.call(FavelaController_0.get.listarCidade(uf, cidade))
-      }
-  
-    // @LINE:13
-    case controllers_AtividadeController_listarFavela5_route(params) =>
-      call(params.fromPath[Long]("favelaId", None)) { (favelaId) =>
-        controllers_AtividadeController_listarFavela5_invoker.call(AtividadeController_3.get.listarFavela(favelaId))
+    case controllers_AtividadeController_criar3_route(params) =>
+      call(params.fromPath[Long]("pessoaId", None)) { (pessoaId) =>
+        controllers_AtividadeController_criar3_invoker.call(AtividadeController_4.get.criar(pessoaId))
       }
   
     // @LINE:14
-    case controllers_AtividadeController_listarCidade6_route(params) =>
-      call(params.fromPath[String]("uf", None), params.fromPath[String]("cidade", None)) { (uf, cidade) =>
-        controllers_AtividadeController_listarCidade6_invoker.call(AtividadeController_3.get.listarCidade(uf, cidade))
+    case controllers_FavelaController_listarUf4_route(params) =>
+      call(params.fromPath[String]("uf", None)) { (uf) =>
+        controllers_FavelaController_listarUf4_invoker.call(FavelaController_1.get.listarUf(uf))
       }
   
     // @LINE:15
-    case controllers_AtividadeController_contribuir7_route(params) =>
-      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
-        controllers_AtividadeController_contribuir7_invoker.call(AtividadeController_3.get.contribuir(atividadeId, pessoaId))
+    case controllers_FavelaController_listarCidade5_route(params) =>
+      call(params.fromPath[String]("uf", None), params.fromPath[String]("cidade", None)) { (uf, cidade) =>
+        controllers_FavelaController_listarCidade5_invoker.call(FavelaController_1.get.listarCidade(uf, cidade))
       }
   
     // @LINE:16
-    case controllers_AtividadeController_cancelarContribuicao8_route(params) =>
-      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
-        controllers_AtividadeController_cancelarContribuicao8_invoker.call(AtividadeController_3.get.cancelarContribuicao(atividadeId, pessoaId))
+    case controllers_AtividadeController_listarFavela6_route(params) =>
+      call(params.fromPath[Long]("favelaId", None)) { (favelaId) =>
+        controllers_AtividadeController_listarFavela6_invoker.call(AtividadeController_4.get.listarFavela(favelaId))
+      }
+  
+    // @LINE:17
+    case controllers_AtividadeController_listarCidade7_route(params) =>
+      call(params.fromPath[String]("uf", None), params.fromPath[String]("cidade", None)) { (uf, cidade) =>
+        controllers_AtividadeController_listarCidade7_invoker.call(AtividadeController_4.get.listarCidade(uf, cidade))
       }
   
     // @LINE:18
-    case controllers_MunicipioController_listarUf9_route(params) =>
-      call(params.fromPath[String]("uf", None)) { (uf) =>
-        controllers_MunicipioController_listarUf9_invoker.call(MunicipioController_1.get.listarUf(uf))
+    case controllers_AtividadeController_contribuir8_route(params) =>
+      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
+        controllers_AtividadeController_contribuir8_invoker.call(AtividadeController_4.get.contribuir(atividadeId, pessoaId))
       }
   
-    // @LINE:22
-    case controllers_Assets_versioned10_route(params) =>
+    // @LINE:19
+    case controllers_AtividadeController_cancelarContribuicao9_route(params) =>
+      call(params.fromPath[Long]("atividadeId", None), params.fromPath[Long]("pessoaId", None)) { (atividadeId, pessoaId) =>
+        controllers_AtividadeController_cancelarContribuicao9_invoker.call(AtividadeController_4.get.cancelarContribuicao(atividadeId, pessoaId))
+      }
+  
+    // @LINE:21
+    case controllers_MunicipioController_listarUf10_route(params) =>
+      call(params.fromPath[String]("uf", None)) { (uf) =>
+        controllers_MunicipioController_listarUf10_invoker.call(MunicipioController_2.get.listarUf(uf))
+      }
+  
+    // @LINE:25
+    case controllers_Assets_versioned11_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned10_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned11_invoker.call(Assets_5.versioned(path, file))
       }
   }
 }

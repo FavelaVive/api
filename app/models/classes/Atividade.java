@@ -15,8 +15,11 @@ import org.joda.time.DateTime;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.WhenCreated;
 import com.avaje.ebean.annotation.WhenModified;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import models.classes.enums.AtividadeCategoria;
 import models.classes.enums.AtividadeTipo;
+import models.utils.DateUtil;
 
 @Entity
 @Table
@@ -29,12 +32,16 @@ public class Atividade extends Model {
 	@Enumerated
 	private AtividadeTipo atividadeTipo;
 	
+	@Enumerated
+	private AtividadeCategoria atividadeCategoria;
+	
 	@Column
 	private String titulo;
 	
 	@Column
 	private String descricao;
 	
+	@JsonIgnore
 	@Column
 	private DateTime dataAtividade;
 	
@@ -47,22 +54,26 @@ public class Atividade extends Model {
 	@OneToMany
 	private List<Contribuicao> contribuicoes;
 	
+	@JsonIgnore
 	@WhenCreated
 	@Column
 	private DateTime dataCriacao;
 	
+	@JsonIgnore
 	@WhenModified
 	@Column
 	private DateTime dataModificacao;
 
 	public Atividade() {}
 	
-	public Atividade(String titulo, String descricao, AtividadeTipo atividadeTipo, DateTime dataAtividade, Pessoa pessoa) {
+	public Atividade(String titulo, String descricao, AtividadeTipo atividadeTipo, AtividadeCategoria atividadeCategoria, DateTime dataAtividade, Pessoa pessoa, Favela favela) {
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.dataAtividade = dataAtividade;
 		this.pessoa = pessoa;
+		this.favela = favela;
 		this.atividadeTipo = atividadeTipo;
+		this.atividadeCategoria = atividadeCategoria;
 	}
 
 	public String getTitulo() {
@@ -109,11 +120,32 @@ public class Atividade extends Model {
 		return pessoa;
 	}
 
+	@JsonIgnore
 	public DateTime getDataAtividade() {
 		return dataAtividade;
 	}
 
+	public String getDataAtividadeFormatada() {
+		return DateUtil.format(dataAtividade, DateUtil.DATE_PATTERN_BR);
+	}
+	
 	public DateTime getDataCriacao() {
 		return dataCriacao;
+	}
+
+	public AtividadeTipo getAtividadeTipo() {
+		return atividadeTipo;
+	}
+
+	public void setAtividadeTipo(AtividadeTipo atividadeTipo) {
+		this.atividadeTipo = atividadeTipo;
+	}
+
+	public AtividadeCategoria getAtividadeCategoria() {
+		return atividadeCategoria;
+	}
+
+	public void setAtividadeCategoria(AtividadeCategoria atividadeCategoria) {
+		this.atividadeCategoria = atividadeCategoria;
 	}
 }
