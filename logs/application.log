@@ -15001,3 +15001,94 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
 2018-07-08 04:04:35,256 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
 2018-07-08 04:04:35,556 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
 2018-07-08 04:04:46,318 [INFO] from application in application-akka.actor.default-dispatcher-9 - [08/07/2018 04:04:46] FavelaVive >>> DETALHES
+2018-07-08 04:20:04,686 [INFO] from application in application-akka.actor.default-dispatcher-8 - [08/07/2018 04:20:04] FavelaVive >>> DETALHES
+2018-07-08 04:25:58,590 [INFO] from application in application-akka.actor.default-dispatcher-8 - [08/07/2018 04:25:58] FavelaVive >>> DETALHES
+2018-07-08 04:26:59,770 [INFO] from application in application-akka.actor.default-dispatcher-8 - [08/07/2018 04:26:59] FavelaVive >>> DETALHES
+2018-07-08 04:27:49,084 [INFO] from application in application-akka.actor.default-dispatcher-10 - [08/07/2018 04:27:49] FavelaVive >>> DETALHES
+2018-07-08 04:29:29,133 [INFO] from application in application-akka.actor.default-dispatcher-10 - [08/07/2018 04:29:29] FavelaVive >>> DETALHES
+2018-07-08 04:30:23,705 [INFO] from application in application-akka.actor.default-dispatcher-10 - [08/07/2018 04:30:23] FavelaVive >>> DETALHES
+2018-07-08 04:34:36,993 [INFO] from application in application-akka.actor.default-dispatcher-10 - [08/07/2018 04:34:36] FavelaVive >>> DETALHES
+2018-07-08 04:36:25,363 [INFO] from application in application-akka.actor.default-dispatcher-10 - [08/07/2018 04:36:25] FavelaVive >>> DETALHES
+2018-07-08 06:03:34,533 [INFO] from application in application-akka.actor.default-dispatcher-15 - [08/07/2018 06:03:34] FavelaVive >>> DETALHES
+2018-07-08 06:07:24,899 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
+2018-07-08 06:07:25,006 [WARN] from application in application-akka.actor.default-dispatcher-15 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:07:25,060 [INFO] from application in application-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
+2018-07-08 06:07:25,185 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-15 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:07:25,493 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-15 - Application started (Dev)
+2018-07-08 06:08:25,787 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2018-07-08 06:08:25,860 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:08:25,910 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2018-07-08 06:08:26,127 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:08:26,360 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2018-07-08 06:08:39,345 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2018-07-08 06:08:39,441 [WARN] from application in application-akka.actor.default-dispatcher-5 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:08:39,511 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2018-07-08 06:08:39,653 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:08:39,881 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2018-07-08 06:13:12,020 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2018-07-08 06:13:12,099 [WARN] from application in application-akka.actor.default-dispatcher-5 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:13:12,163 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2018-07-08 06:13:12,297 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:13:12,518 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2018-07-08 06:14:15,161 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2018-07-08 06:14:15,260 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:14:15,312 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2018-07-08 06:14:15,432 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:14:15,695 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2018-07-08 06:14:52,559 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-08 06:14:52,651 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:14:52,720 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-08 06:14:52,877 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:14:53,166 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-07-08 06:16:19,690 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2018-07-08 06:16:19,764 [WARN] from application in application-akka.actor.default-dispatcher-6 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:16:19,821 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2018-07-08 06:16:20,040 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:16:20,325 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2018-07-08 06:17:23,109 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2018-07-08 06:17:23,203 [WARN] from application in application-akka.actor.default-dispatcher-6 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:17:23,268 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2018-07-08 06:17:23,385 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:17:23,809 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2018-07-08 06:17:54,718 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2018-07-08 06:17:54,804 [WARN] from application in application-akka.actor.default-dispatcher-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:17:54,870 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2018-07-08 06:17:55,096 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:17:55,443 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-07-08 06:22:52,304 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2018-07-08 06:22:52,401 [WARN] from application in application-akka.actor.default-dispatcher-6 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:22:52,455 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2018-07-08 06:22:52,613 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:22:52,826 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2018-07-08 06:23:56,425 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2018-07-08 06:23:56,519 [WARN] from application in application-akka.actor.default-dispatcher-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:23:56,582 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2018-07-08 06:23:56,713 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:23:56,938 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-07-08 06:24:44,877 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2018-07-08 06:24:44,959 [WARN] from application in application-akka.actor.default-dispatcher-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:24:45,012 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2018-07-08 06:24:45,151 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:24:45,380 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-07-08 06:25:37,764 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2018-07-08 06:25:37,992 [WARN] from application in application-akka.actor.default-dispatcher-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:25:38,097 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2018-07-08 06:25:38,301 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:25:38,635 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-07-08 06:30:18,275 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2018-07-08 06:30:18,359 [WARN] from application in application-akka.actor.default-dispatcher-8 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:30:18,404 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2018-07-08 06:30:18,547 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:30:18,769 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-07-08 06:30:18,812 [INFO] from application in application-akka.actor.default-dispatcher-4 - [08/07/2018 06:30:18] FavelaVive >>> DETALHES
+2018-07-08 06:30:36,997 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2018-07-08 06:30:37,109 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:30:37,174 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2018-07-08 06:30:37,332 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:30:37,742 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2018-07-08 06:32:46,744 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2018-07-08 06:32:46,825 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2018-07-08 06:32:46,935 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-07-08 06:32:47,088 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/hackacity2018
+2018-07-08 06:32:47,378 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-07-08 06:34:22,949 [INFO] from application in application-akka.actor.default-dispatcher-6 - [08/07/2018 06:34:22] FavelaVive >>> DETALHES
